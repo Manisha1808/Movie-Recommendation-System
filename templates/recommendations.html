@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recommendations for {{ movie_title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    
+</head>
+<body>
+    <h1>Recommendations for "{{ movie_title }}"</h1>
+
+    {% if message %}
+        <p style="text-align:center;">{{ message }}</p>
+    {% else %}
+        <div class="recommendations-container">
+            {% for rec in recommendations %}
+                <div class="recommendation-card">
+                    <strong>{{ rec.original_title }}</strong><br>
+                    {{ rec.genres }}<br>
+                    Rating: {{ rec.vote_average }}<br>
+                    Released: {{ rec.release_date }}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <a href="/">Search another movie</a>
+</body>
+</html>
