@@ -1,0 +1,93 @@
+body {
+    background-color: #121212;
+    color: #f5f5f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #ff3c00; /* Bright orange */
+    margin-top: 30px;
+    font-size: 2.5rem;
+}
+
+form {
+    margin-top: 30px;
+    text-align: center;
+}
+
+label {
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    width: 300px;
+    font-size: 1rem;
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #ff3c00;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #e03500; /* Slightly darker orange */
+}
+
+h2 {
+    margin-top: 40px;
+    color: #ffa726; /* Soft orange for headings */
+}
+
+.recommendations-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.recommendation-card {
+    background-color: #1e1e1e;
+    border-left: 5px solid #ff3c00;
+    color: #f5f5f5;
+    border-radius: 10px;
+    padding: 15px;
+    width: 220px;
+    box-shadow: 0 4px 8px rgba(255, 60, 0, 0.2);
+    transition: transform 0.2s ease;
+    text-align: center;
+}
+
+.recommendation-card:hover {
+    transform: scale(1.03);
+}
+
+.recommendation-card img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+strong {
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #cccccc;
+}
