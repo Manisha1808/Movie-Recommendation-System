@@ -1,1 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendation System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    
+</head>
+<body>
+
+    <center><h1>Movie Recommendation System</h1></center>
+
+    <form method="POST">
+        <label for="movie_title">Enter Movie Title:</label>
+        <input type="text" id="movie_title" name="movie_title" required>
+        <button type="submit">Search</button>
+    </form>
+
+    {% if movie_title %}
+        <div class="recommendations-header">
+            <h2>Recommendations for "{{ movie_title }}"</h2>
+        </div>
+        {% if recommendations %}
+            <div class="recommendations-container">
+                {% for movie in recommendations %}
+                    <div class="recommendation-card">
+                        <strong>{{ movie['original_title'] }}</strong><br>
+                        Genres: {{ movie['genres'] }}<br>
+                        Rating: {{ movie['vote_average'] }}<br>
+                        Release Date: {{ movie['release_date'] }}<br>
+                        {% if movie['Poster_URL'] %}
+                            <img src="{{ movie['Poster_URL'] }}" alt="{{ movie['original_title'] }} Poster">
+                        {% else %}
+                            <p>No poster available</p>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p style="text-align:center;">{{ message }}</p>
+        {% endif %}
+    {% endif %}
+
+</body>
+</html>
 
